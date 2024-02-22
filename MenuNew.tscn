@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://blank.png" type="Texture" id=1]
+[ext_resource path="res://telebii.gdshader" type="Shader" id=2]
+[ext_resource path="res://turning-on-lg-old-tv-29288.mp3" type="AudioStream" id=3]
+[ext_resource path="res://AnimatedSprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://monolog.mp3" type="AudioStream" id=5]
+[ext_resource path="res://MenuNew.gd" type="Script" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/overlay = false
+shader_param/scanlines_opacity = 0.4
+shader_param/scanlines_width = 0.25
+shader_param/grille_opacity = 0.3
+shader_param/resolution = Vector2( 640, 480 )
+shader_param/pixelate = true
+shader_param/roll = true
+shader_param/roll_speed = 8.0
+shader_param/roll_size = 15.0
+shader_param/roll_variation = 1.8
+shader_param/distort_intensity = 0.05
+shader_param/noise_opacity = 0.4
+shader_param/noise_speed = 5.0
+shader_param/static_noise_intensity = 0.06
+shader_param/aberration = 0.03
+shader_param/brightness = 1.4
+shader_param/discolor = true
+shader_param/warp_amount = 1.0
+shader_param/clip_warp = false
+shader_param/vignette_intensity = 0.4
+shader_param/vignette_opacity = 0.5
+
+[sub_resource type="Animation" id=2]
+resource_name = "Intro"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("monolog:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.9, 2, 26.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("tvstart:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 17.6, 17.8, 30 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Black:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.03, 21.1619, 21.2619, 23.3178, 23.4988, 25.1378, 25.2678, 25.6478, 25.6978, 25.8578 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true, false, true, false, false, true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("monolog:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("tvstart:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Black:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[node name="MenuNew" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Shader" type="Sprite" parent="."]
+material = SubResource( 1 )
+scale = Vector2( 0.533333, 0.555556 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Black" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 514, 301 )
+scale = Vector2( 0.532812, 0.557407 )
+texture = ExtResource( 1 )
+
+[node name="Bzzy" parent="." instance=ExtResource( 4 )]
+visible = true
+show_behind_parent = true
+position = Vector2( 510.5, 299.5 )
+scale = Vector2( 1.59531, 1.66389 )
+frame = 4
+
+[node name="tvstart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 10.0
+
+[node name="monolog" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 10.0
+
+[node name="aniplay" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
+anims/Intro = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="animation_finished" from="aniplay" to="." method="_on_aniplay_animation_finished"]

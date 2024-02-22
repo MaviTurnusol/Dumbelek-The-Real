@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/monolog.mp3-eb8d832ea4063917d9c2aa84b2ee4bfe.mp3str"
+
+[deps]
+
+source_file="res://monolog.mp3"
+dest_files=[ "res://.import/monolog.mp3-eb8d832ea4063917d9c2aa84b2ee4bfe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

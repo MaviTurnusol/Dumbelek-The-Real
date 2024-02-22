@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Killing-machine-kesik.mp3-d7a355093631ed655eaa353bb353614b.mp3str"
+
+[deps]
+
+source_file="res://Killing-machine-kesik.mp3"
+dest_files=[ "res://.import/Killing-machine-kesik.mp3-d7a355093631ed655eaa353bb353614b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

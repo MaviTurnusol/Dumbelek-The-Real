@@ -1,0 +1,181 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://telebii.gdshader" type="Shader" id=1]
+[ext_resource path="res://Tvcd-d92gK.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Channels.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=13]
+default_font = SubResource( 12 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/overlay = true
+shader_param/scanlines_opacity = 0.4
+shader_param/scanlines_width = 0.25
+shader_param/grille_opacity = 0.3
+shader_param/resolution = Vector2( 640, 480 )
+shader_param/pixelate = true
+shader_param/roll = true
+shader_param/roll_speed = 8.0
+shader_param/roll_size = 15.0
+shader_param/roll_variation = 1.8
+shader_param/distort_intensity = 0.05
+shader_param/noise_opacity = 0.4
+shader_param/noise_speed = 5.0
+shader_param/static_noise_intensity = 0.06
+shader_param/aberration = 0.03
+shader_param/brightness = 1.4
+shader_param/discolor = true
+shader_param/warp_amount = 1.0
+shader_param/clip_warp = false
+shader_param/vignette_intensity = 0.4
+shader_param/vignette_opacity = 0.5
+
+[node name="Menu" type="Control"]
+
+[node name="TheBlack" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 601.0
+color = Color( 0.0823529, 0.0745098, 0.0745098, 1 )
+
+[node name="Channels" type="Button" parent="."]
+margin_left = 255.0
+margin_top = 220.0
+margin_right = 770.0
+margin_bottom = 254.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Channels"
+script = ExtResource( 3 )
+
+[node name="DumbES" type="Button" parent="."]
+margin_left = 144.0
+margin_top = 279.0
+margin_right = 874.0
+margin_bottom = 373.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="TheText" type="Label" parent="DumbES"]
+margin_right = 727.0
+margin_bottom = 87.0
+theme = SubResource( 13 )
+text = "Dumbelek Entertaintment System"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Settings" type="Button" parent="."]
+margin_left = 253.0
+margin_top = 369.0
+margin_right = 778.0
+margin_bottom = 427.0
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Settings"
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 242.0
+margin_top = 430.0
+margin_right = 794.0
+margin_bottom = 482.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "Exit"
+
+[node name="Title" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 37.0
+margin_right = 1029.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+text = "Dumbelek TV"
+align = 1
+valign = 1
+
+[node name="TelebiShader" type="ColorRect" parent="."]
+material = SubResource( 1 )
+margin_right = 1028.0
+margin_bottom = 604.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="mouse_entered" from="Channels" to="Channels" method="_on_Channels_mouse_entered"]
+[connection signal="mouse_exited" from="Channels" to="Channels" method="_on_Channels_mouse_exited"]
+[connection signal="pressed" from="Channels" to="Channels" method="_on_Channels_pressed"]
+[connection signal="mouse_entered" from="DumbES" to="Channels" method="_on_DumbES_mouse_entered"]
+[connection signal="mouse_exited" from="DumbES" to="Channels" method="_on_DumbES_mouse_exited"]
+[connection signal="mouse_entered" from="Settings" to="Channels" method="_on_Settings_mouse_entered"]
+[connection signal="mouse_exited" from="Settings" to="Channels" method="_on_Settings_mouse_exited"]
+[connection signal="mouse_entered" from="Exit" to="Channels" method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="Channels" method="_on_Exit_mouse_exited"]

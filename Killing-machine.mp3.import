@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Killing-machine.mp3-4b456f8ec6239428de8568e70ad7e062.mp3str"
+
+[deps]
+
+source_file="res://Killing-machine.mp3"
+dest_files=[ "res://.import/Killing-machine.mp3-4b456f8ec6239428de8568e70ad7e062.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

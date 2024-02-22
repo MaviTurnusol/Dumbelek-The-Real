@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/turning-on-lg-old-tv-29288.mp3-696bb06f2e45fdb898c32cb7be6efd9d.mp3str"
+
+[deps]
+
+source_file="res://turning-on-lg-old-tv-29288.mp3"
+dest_files=[ "res://.import/turning-on-lg-old-tv-29288.mp3-696bb06f2e45fdb898c32cb7be6efd9d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TV Static Noise Sound Effect - Bzz.mp3-6a3f33e0dc6601ef29f2690db029382f.mp3str"
+
+[deps]
+
+source_file="res://TV Static Noise Sound Effect - Bzz.mp3"
+dest_files=[ "res://.import/TV Static Noise Sound Effect - Bzz.mp3-6a3f33e0dc6601ef29f2690db029382f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://map.gd" type="Script" id=1]
+
+[node name="map" type="Node"]
+script = ExtResource( 1 )
+
+[node name="1_2" type="Timer" parent="."]
+one_shot = true
+
+[node name="1_4" type="Timer" parent="."]
+one_shot = true
+
+[node name="1" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="1_2" to="." method="_on_1_2_timeout"]
+[connection signal="timeout" from="1_4" to="." method="_on_1_4_timeout"]
+[connection signal="timeout" from="1" to="." method="_on_1_timeout"]
